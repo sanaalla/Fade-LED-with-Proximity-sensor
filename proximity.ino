@@ -1,6 +1,6 @@
 #include <NewPing.h>   //include the library
 
-int led = 9;           // the PWM pin the LED is attached to
+int led = 5;           // the PWM pin the LED is attached to
 int brightness = 0;    // how bright the LED is
 int fadeAmount1 = 7;    // how many points to fade the LED by
 int fadeAmount2 = 2;    // how many points to fade the LED by
@@ -38,7 +38,7 @@ void loop() {
 }
 
 
-if(distanceVal<=20){
+if((distanceVal<40)&&(distanceVal>0)){
 
     // set the brightness of pin 9:
   analogWrite(led, brightness);
@@ -51,7 +51,7 @@ if(distanceVal<=20){
     fadeAmount1 = -fadeAmount1;
   }
   // wait for 30 milliseconds to see the dimming effect
-  delay(18);
+  delay(10);
 }
 
 
@@ -73,4 +73,3 @@ else{
 
 
 }
-
